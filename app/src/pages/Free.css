@@ -1,0 +1,113 @@
+.page-free { padding-bottom: 0; }
+
+.free-clear {
+  font-family: var(--font-sans);
+  font-size: var(--fs-meta);
+  letter-spacing: var(--ls-meta);
+  color: var(--text-secondary);
+  padding: 0 12px;
+  height: 36px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--divider);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.free-clear:active {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.free-body {
+  padding: 4px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.free-dim {
+  background: var(--card);
+  border: 1px solid var(--divider);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-card);
+  padding: 16px;
+}
+
+.free-dim__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.free-dim__name {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h2);
+  font-weight: 500;
+  letter-spacing: var(--ls-h2);
+  color: var(--text);
+}
+
+.free-dim__count {
+  font-family: var(--font-sans);
+  font-size: var(--fs-caption);
+  letter-spacing: var(--ls-caption);
+  color: var(--text-muted);
+}
+
+.free-dim__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.free-footspace {
+  height: 108px; /* 给底部栏预留空间 */
+}
+
+.free-footbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border-top: 1px solid var(--divider);
+  padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
+  z-index: 20;
+}
+
+.free-footbar__inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.free-footbar__meta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.free-footbar__count {
+  font-family: var(--font-serif);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  letter-spacing: var(--ls-body);
+  color: var(--text);
+}
+
+.free-footbar__hint {
+  font-family: var(--font-sans);
+  font-size: var(--fs-caption);
+  letter-spacing: var(--ls-caption);
+  color: var(--text-muted);
+}
+
+.free-footbar .btn-primary {
+  flex-shrink: 0;
+  padding-inline: 28px;
+}

@@ -1,0 +1,139 @@
+/* 视觉规范 · 青瓷淡彩 / 墨色烛金 */
+
+:root {
+  /* 色彩 —— Light（青瓷淡彩，默认） */
+  --bg: #F0F2EC;
+  --card-hero-primary: rgba(255, 255, 255, 0.88);
+  --card-hero-secondary: rgba(240, 242, 236, 0.85);
+  --card: #FFFFFF;
+  --text: #2A3A36;
+  --text-secondary: #6B7A74;
+  --text-muted: #95A19A;
+  --accent: #4A8C7E;
+  --accent-on: #FFFFFF;
+  --aux-1: #A8C4B8;
+  --aux-2: #C9A96E;
+  --divider: #D8DED2;
+  --stroke-glass: rgba(255, 255, 255, 0.6);
+
+  /* 首页 hero 叠加 */
+  --hero-overlay: linear-gradient(180deg,
+    rgba(180, 200, 210, 0.25) 0%,
+    rgba(60, 90, 100, 0.15) 40%,
+    rgba(30, 55, 65, 0.55) 100%);
+
+  /* 字号 */
+  --fs-display: 28px;
+  --fs-h1: 22px;
+  --fs-h2: 18px;
+  --fs-body: 15px;
+  --fs-label: 14px;
+  --fs-meta: 13px;
+  --fs-caption: 12px;
+
+  /* 字距 */
+  --ls-display: 4px;
+  --ls-h1: 3px;
+  --ls-h2: 2px;
+  --ls-body: 1px;
+  --ls-label: 1px;
+  --ls-meta: 2px;
+  --ls-caption: 2px;
+
+  /* 间距 */
+  --sp-xs: 4px;
+  --sp-sm: 8px;
+  --sp-md: 12px;
+  --sp-lg: 16px;
+  --sp-xl: 20px;
+  --sp-2xl: 24px;
+  --sp-3xl: 32px;
+
+  /* 圆角 */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 14px;
+  --r-xl: 20px;
+  --r-pill: 999px;
+
+  /* 阴影 */
+  --sh-card: 0 2px 8px rgba(31, 84, 72, 0.08);
+  --sh-hero: 0 8px 32px rgba(20, 40, 50, 0.25), 0 1px 3px rgba(20, 40, 50, 0.1);
+  --sh-dark-card: 0 2px 12px rgba(0, 0, 0, 0.4);
+
+  /* logo 滤镜 */
+  --logo-filter: none;
+  --logo-opacity: 0.92;
+
+  /* 字体 */
+  --font-serif: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+  --font-sans: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+/* 墨色烛金（Dark） */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17150F;
+    --card-hero-primary: rgba(31, 28, 21, 0.9);
+    --card-hero-secondary: rgba(23, 21, 15, 0.88);
+    --card: #1F1C15;
+    --card-elevated: #272319;
+    --text: #E8DCC4;
+    --text-secondary: #A89878;
+    --text-muted: #6B6250;
+    --accent: #D4A24C;
+    --accent-on: #17150F;
+    --aux-1: #8A6A3A;
+    --aux-2: #8A6A3A;
+    --divider: #322C22;
+    --stroke-glass: rgba(232, 220, 196, 0.12);
+
+    --sh-card: var(--sh-dark-card);
+    --sh-hero: 0 8px 32px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.4);
+
+    --logo-filter: invert(0.92) sepia(0.35) saturate(1.1) brightness(1.05) hue-rotate(-10deg);
+    --logo-opacity: 0.9;
+  }
+}
+
+/* 手动切换（覆盖系统） */
+:root[data-theme="dark"] {
+  --bg: #17150F;
+  --card-hero-primary: rgba(31, 28, 21, 0.9);
+  --card-hero-secondary: rgba(23, 21, 15, 0.88);
+  --card: #1F1C15;
+  --card-elevated: #272319;
+  --text: #E8DCC4;
+  --text-secondary: #A89878;
+  --text-muted: #6B6250;
+  --accent: #D4A24C;
+  --accent-on: #17150F;
+  --aux-1: #8A6A3A;
+  --aux-2: #8A6A3A;
+  --divider: #322C22;
+  --stroke-glass: rgba(232, 220, 196, 0.12);
+  --sh-card: var(--sh-dark-card);
+  --sh-hero: 0 8px 32px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.4);
+  --logo-filter: invert(0.92) sepia(0.35) saturate(1.1) brightness(1.05) hue-rotate(-10deg);
+  --logo-opacity: 0.9;
+}
+
+:root[data-theme="light"] {
+  --bg: #F0F2EC;
+  --card-hero-primary: rgba(255, 255, 255, 0.88);
+  --card-hero-secondary: rgba(240, 242, 236, 0.85);
+  --card: #FFFFFF;
+  --text: #2A3A36;
+  --text-secondary: #6B7A74;
+  --text-muted: #95A19A;
+  --accent: #4A8C7E;
+  --accent-on: #FFFFFF;
+  --aux-1: #A8C4B8;
+  --aux-2: #C9A96E;
+  --divider: #D8DED2;
+  --stroke-glass: rgba(255, 255, 255, 0.6);
+  --sh-card: 0 2px 8px rgba(31, 84, 72, 0.08);
+  --sh-hero: 0 8px 32px rgba(20, 40, 50, 0.25), 0 1px 3px rgba(20, 40, 50, 0.1);
+  --logo-filter: none;
+  --logo-opacity: 0.92;
+}

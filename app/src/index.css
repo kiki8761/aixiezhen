@@ -1,0 +1,149 @@
+@import "./styles/tokens.css";
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+  padding: 0;
+}
+
+button:disabled { cursor: not-allowed; }
+
+input {
+  font-family: inherit;
+  color: inherit;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* 触控热区（最小 44×44） */
+.hit { min-width: 44px; min-height: 44px; }
+
+/* 通用按钮 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 var(--sp-xl);
+  border-radius: var(--r-md);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--ls-h2);
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease,
+              border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-on);
+}
+.btn-primary:disabled {
+  background: var(--divider);
+  color: var(--text-muted);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+/* 输入框 */
+.input {
+  display: block;
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  background: var(--card);
+  border: 1px solid var(--divider);
+  border-radius: var(--r-md);
+  font-size: var(--fs-body);
+  color: var(--text);
+  transition: border-color 0.2s ease;
+}
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.input::placeholder { color: var(--text-muted); }
+
+/* 胶囊标签（chip） */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--divider);
+  transition: transform 0.2s ease, background 0.2s ease,
+              color 0.2s ease, border-color 0.2s ease;
+}
+.chip:active { transform: scale(0.96); }
+
+.chip--on {
+  background: var(--accent);
+  color: var(--accent-on);
+  border-color: transparent;
+}
+
+/* 常规卡片（内页） */
+.card {
+  background: var(--card);
+  border: 1px solid var(--divider);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-card);
+}
+
+/* 分隔短线装饰（副标题两侧） */
+.rule-dash {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.rule-dash::before, .rule-dash::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--divider);
+}
+.rule-dash--hero::before, .rule-dash--hero::after {
+  background: rgba(255, 255, 255, 0.6);
+}
