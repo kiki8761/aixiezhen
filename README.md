@@ -2,7 +2,7 @@
 
 选关键词 → 生成古风艺术照提示词 → 复制去 AI 绘图工具出图。
 
-- 线上：<https://aixiezhen.kikiaigc.com/>
+- 线上：<https://aixiezhen.tools.kikiaigc.com/>
 - 技术栈：Vite + React 19 + TypeScript，纯前端 SPA，无后端
 - 视觉规范：青瓷淡彩（默认）/ 墨色烛金（暗色），跟随系统 `prefers-color-scheme`
 - 数据：42 个主题 × 458 个变体（来自小红书整理合集）

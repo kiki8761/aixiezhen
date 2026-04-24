@@ -1,4 +1,4 @@
-# 部署说明 · aixiezhen.kikiaigc.com
+# 部署说明 · aixiezhen.tools.kikiaigc.com
 
 ## 构建
 
@@ -27,7 +27,7 @@ dist/
 ### 1) 对象存储 + CDN（推荐，国内访问快）
 
 上传整个 `dist/` 到对象存储桶（OSS / COS / 七牛 / S3），在控制台绑定
-`aixiezhen.kikiaigc.com` 域名，开启静态站点托管 + CDN。
+`aixiezhen.tools.kikiaigc.com` 域名，开启静态站点托管 + CDN。
 
 **要点：**
 - 默认首页：`index.html`
@@ -40,7 +40,7 @@ dist/
 ```nginx
 server {
     listen 443 ssl http2;
-    server_name aixiezhen.kikiaigc.com;
+    server_name aixiezhen.tools.kikiaigc.com;
 
     root /var/www/aixiezhen/dist;
     index index.html;
@@ -64,11 +64,11 @@ server {
 
 - 构建命令：`npm run build`
 - 输出目录：`dist`
-- 域名绑定：在平台设置里加 CNAME 到 `aixiezhen.kikiaigc.com`
+- 域名绑定：在平台设置里加 CNAME 到 `aixiezhen.tools.kikiaigc.com`
 
 ## 验收清单（部署后手测）
 
-- [ ] iOS Safari 打开 `aixiezhen.kikiaigc.com` —— 首页 hero 背景无白边，标题阴影到位
+- [ ] iOS Safari 打开 `aixiezhen.tools.kikiaigc.com` —— 首页 hero 背景无白边，标题阴影到位
 - [ ] 微信内嵌浏览器打开 —— 同上；点"复制提示词"能复制
 - [ ] 系统切深色 —— 自动变墨色烛金；logo 色调反转自然
 - [ ] 模板模式 → 任选一个主题 → 选变体 → 复制 —— 全流程通
