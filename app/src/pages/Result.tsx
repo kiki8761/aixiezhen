@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PageHeader from '../components/PageHeader';
+import IcpBadge from '../components/IcpBadge';
 import { copyText } from '../lib/clipboard';
 import './Result.css';
 
@@ -84,6 +85,8 @@ export default function Result({ breadcrumb, prompt, onBack, onRestart, onChange
           </button>
         </div>
       </div>
+
+      <IcpBadge />
     </div>
   );
 }

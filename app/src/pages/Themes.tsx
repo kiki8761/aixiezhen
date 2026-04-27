@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import PageHeader from '../components/PageHeader';
+import IcpBadge from '../components/IcpBadge';
 import type { Theme } from '../lib/types';
 import './Themes.css';
 
@@ -48,13 +49,14 @@ export default function Themes({ themes, query, onQueryChange, onBack, onSelect 
         </div>
       )}
 
-      <div className="themes-foot-space" aria-hidden="true" />
+      <IcpBadge />
     </div>
   );
 }
 
 function ThemeCard({ theme, onClick }: { theme: Theme; onClick: () => void }) {
-  const bg = `linear-gradient(160deg, ${hexToRgba(theme.color, 0.22)} 0%, ${hexToRgba(theme.color, 0.08)} 100%)`;
+  // 顶部偏深、底部留呼吸感；比一开始的 0.22→0.08 加深约 1.8 倍，识别度更强
+  const bg = `linear-gradient(160deg, ${hexToRgba(theme.color, 0.42)} 0%, ${hexToRgba(theme.color, 0.16)} 100%)`;
   return (
     <button className="theme-card" onClick={onClick} style={{ background: bg }}>
       <span

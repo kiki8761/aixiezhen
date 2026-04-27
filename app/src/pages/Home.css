@@ -148,16 +148,40 @@
 }
 
 .home-foot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 16px;
+  padding-bottom: calc(4px + env(safe-area-inset-bottom));
   font-family: var(--font-sans);
+  text-align: center;
+}
+
+.home-foot__brand {
   font-size: var(--fs-caption);
   letter-spacing: var(--ls-caption);
   color: rgba(255, 255, 255, 0.85);
-  padding-top: 12px;
+  line-height: 1;
 }
 
 .home-foot-brand {
   color: #FFD8A8;
   letter-spacing: 1px;
+}
+
+.home-foot__icp {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.62);
+  padding: 4px 0;
+  transition: color 0.2s ease;
+}
+
+.home-foot__icp:active {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 @media (min-height: 780px) {

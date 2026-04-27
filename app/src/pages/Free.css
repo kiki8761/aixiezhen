@@ -59,8 +59,13 @@
   gap: 8px;
 }
 
+/* 自由模式覆盖 ICP 默认 padding：底部已有 fixed 操作栏，不需要 safe-area，紧凑些 */
+.free-body .icp-foot {
+  padding: 12px 0;
+}
+
 .free-footspace {
-  height: 108px; /* 给底部栏预留空间 */
+  height: 76px; /* 仅覆盖 fixed 操作栏高度，比之前 108 紧凑 */
 }
 
 .free-footbar {

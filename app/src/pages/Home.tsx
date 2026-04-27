@@ -64,7 +64,17 @@ export default function Home({ onEnterTemplate, onEnterFree }: Props) {
         </section>
 
         <footer className="home-foot">
-          by <span className="home-foot-brand">kiki</span> 的 AI 日常
+          <div className="home-foot__brand">
+            by <span className="home-foot-brand">kiki</span> 的 AI 日常
+          </div>
+          <a
+            className="home-foot__icp"
+            href="https://beian.miit.gov.cn/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            京ICP备2026018722号
+          </a>
         </footer>
       </main>
     </div>

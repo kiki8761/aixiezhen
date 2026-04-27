@@ -14,7 +14,7 @@
 }
 
 .themes-grid {
-  padding: 4px 20px 40px;
+  padding: 4px 20px 8px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
@@ -98,5 +98,3 @@
   font-size: var(--fs-caption);
   color: var(--text-muted);
 }
-
-.themes-foot-space { height: 20px; }

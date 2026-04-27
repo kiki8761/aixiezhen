@@ -1,7 +1,7 @@
-.page-variants { padding-bottom: 40px; }
+.page-variants { padding-bottom: 0; }
 
 .variants-list {
-  padding: 4px 20px 20px;
+  padding: 4px 20px 8px;
   display: flex;
   flex-direction: column;
   gap: 10px;

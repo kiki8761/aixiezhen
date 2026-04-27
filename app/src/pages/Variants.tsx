@@ -1,4 +1,5 @@
 import PageHeader from '../components/PageHeader';
+import IcpBadge from '../components/IcpBadge';
 import type { Theme, Variant } from '../lib/types';
 import './Variants.css';
 
@@ -35,6 +36,8 @@ export default function Variants({ theme, onBack, onPickVariant }: Props) {
           </button>
         ))}
       </div>
+
+      <IcpBadge />
     </div>
   );
 }

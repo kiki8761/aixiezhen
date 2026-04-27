@@ -29,11 +29,18 @@ export const FREE_DIMENSIONS: FreeDimension[] = [
   },
   {
     id: 'hair',
-    name: '发型发饰',
+    name: '发型',
     connector: '头梳',
     keywords: [
       '高雅繁复盘发','明制高盘发','明制双环髻','盛唐高耸发髻',
-      '高马尾古铜发冠','半束半披长发','半披发','长发披散',
+      '高马尾古铜发冠','半束半披长发','半披发','长发披散'
+    ],
+  },
+  {
+    id: 'hairAccessory',
+    name: '发饰',
+    connector: '簪',
+    keywords: [
       '赤金流苏发饰','金色流苏珠翠','银蓝珠翠冷光金饰',
       '浅紫玉银珍珠','鎏金发簪点翠','凤冠珍珠帘',
       '玉簪步摇','金步摇宝石钗','白色梨花发饰','玉竹叶簪'
@@ -102,6 +109,7 @@ export function buildFreePrompt(selection: Selection): string {
   const light = get('light');
   const costume = get('costume');
   const hair = get('hair');
+  const hairAccessory = get('hairAccessory');
   const makeup = get('makeup');
   const pose = get('pose');
   const camera = get('camera');
@@ -116,6 +124,7 @@ export function buildFreePrompt(selection: Selection): string {
   const s2parts: string[] = [];
   if (costume.length) s2parts.push(`她身着${join(costume)}`);
   if (hair.length) s2parts.push(`头梳${join(hair)}`);
+  if (hairAccessory.length) s2parts.push(`簪${join(hairAccessory)}`);
   if (makeup.length) s2parts.push(join(makeup));
   const sentence2 = s2parts.length ? s2parts.join('，') + '。' : '';
 

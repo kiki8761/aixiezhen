@@ -1,4 +1,5 @@
 import PageHeader from '../components/PageHeader';
+import IcpBadge from '../components/IcpBadge';
 import { FREE_DIMENSIONS, buildFreePrompt, totalSelected } from '../lib/freeMode';
 import type { Selection } from '../lib/freeMode';
 import './Free.css';
@@ -14,11 +15,10 @@ export default function Free({ selection, onSelectionChange, onBack, onGenerate 
   const total = totalSelected(selection);
   const enough = total >= 3;
 
+  // 单选：点已选 → 取消；点其他 → 替换为这个
   const toggle = (dimId: string, kw: string) => {
     const current = selection[dimId] || [];
-    const next = current.includes(kw)
-      ? current.filter((k) => k !== kw)
-      : [...current, kw];
+    const next = current[0] === kw ? [] : [kw];
     onSelectionChange({ ...selection, [dimId]: next });
   };
 
@@ -79,6 +79,8 @@ export default function Free({ selection, onSelectionChange, onBack, onGenerate 
             </section>
           );
         })}
+
+        <IcpBadge />
 
         <div className="free-footspace" aria-hidden="true" />
       </div>

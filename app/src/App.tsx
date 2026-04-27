@@ -6,7 +6,6 @@ import Themes from './pages/Themes';
 import Variants from './pages/Variants';
 import Free from './pages/Free';
 import Result from './pages/Result';
-import IcpBadge from './components/IcpBadge';
 import { applyTheme, loadTheme } from './lib/theme';
 import type { Selection } from './lib/freeMode';
 
@@ -25,22 +24,30 @@ export default function App() {
     applyTheme(loadTheme());
   }, []);
 
-  // hash 路由支持（浏览器返回键能回上一步）
+  // 路由栈：用 history.pushState 维护，浏览器返回 = 左上角返回 = 都回上一级
   useEffect(() => {
-    const onPop = () => {
-      // 简单处理：返回时一律回首页，避免 hash 解析复杂
-      setRoute({ name: 'home' });
+    // 初始化：把当前 home 路由写到 history 当前 entry，刷新/直接打开都回 home
+    window.history.replaceState({ route: { name: 'home' } as PageRoute }, '', '#home');
+
+    const onPop = (e: PopStateEvent) => {
+      const r = (e.state && e.state.route) as PageRoute | undefined;
+      setRoute(r ?? { name: 'home' });
+      window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
     };
     window.addEventListener('popstate', onPop);
     return () => window.removeEventListener('popstate', onPop);
   }, []);
 
+  // 前进操作：push 一条新 history，setRoute 同步更新
   const navigate = (next: PageRoute) => {
     setRoute(next);
-    // 滚动到顶部
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
-    // 为浏览器返回键埋点
-    window.history.pushState({ screen: next.name }, '', `#${next.name}`);
+    window.history.pushState({ route: next }, '', `#${next.name}`);
+  };
+
+  // 返回操作：交给浏览器 history.back，popstate 会回放到上一个 route
+  const goBack = () => {
+    window.history.back();
   };
 
   const page = useMemo((): React.ReactNode => {
@@ -58,7 +65,7 @@ export default function App() {
             themes={data.themes}
             query={themeQuery}
             onQueryChange={setThemeQuery}
-            onBack={() => navigate({ name: 'home' })}
+            onBack={goBack}
             onSelect={(themeId) => navigate({ name: 'variants', themeId })}
           />
         );
@@ -67,14 +74,14 @@ export default function App() {
         if (!theme) {
           return (
             <div style={{ padding: 20 }}>
-              主题不存在，<button className="btn btn-secondary" onClick={() => navigate({ name: 'themes' })}>返回主题墙</button>
+              主题不存在，<button className="btn btn-secondary" onClick={goBack}>返回</button>
             </div>
           );
         }
         return (
           <Variants
             theme={theme}
-            onBack={() => navigate({ name: 'themes' })}
+            onBack={goBack}
             onPickVariant={(variant) =>
               navigate({
                 name: 'result',
@@ -92,7 +99,7 @@ export default function App() {
           <Free
             selection={freeSelection}
             onSelectionChange={setFreeSelection}
-            onBack={() => navigate({ name: 'home' })}
+            onBack={goBack}
             onGenerate={(prompt) =>
               navigate({
                 name: 'result',
@@ -108,37 +115,16 @@ export default function App() {
           <Result
             breadcrumb={route.breadcrumb}
             prompt={route.prompt}
-            onBack={() => {
-              if (route.from === 'template' && route.themeId) {
-                navigate({ name: 'variants', themeId: route.themeId });
-              } else {
-                navigate({ name: 'free' });
-              }
-            }}
+            onBack={goBack}
             onRestart={() => {
               if (route.from === 'free') setFreeSelection({});
               navigate({ name: 'home' });
             }}
-            onChangeOne={() => {
-              if (route.from === 'template' && route.themeId) {
-                navigate({ name: 'variants', themeId: route.themeId });
-              } else {
-                navigate({ name: 'free' });
-              }
-            }}
+            onChangeOne={goBack}
           />
         );
     }
   }, [route, data, freeSelection, themeQuery]);
 
-  // free 模式底部有固定操作栏会挡住，其它页面都显示
-  const showIcp = route.name !== 'free';
-  const icpVariant = route.name === 'home' ? 'glass' : 'plain';
-
-  return (
-    <>
-      {page}
-      {showIcp ? <IcpBadge variant={icpVariant} /> : null}
-    </>
-  );
+  return page;
 }
