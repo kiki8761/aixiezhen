@@ -1,3 +1,4 @@
+import type { Dispatch, SetStateAction } from 'react';
 import PageHeader from '../components/PageHeader';
 import IcpBadge from '../components/IcpBadge';
 import { FREE_DIMENSIONS, buildFreePrompt, totalSelected } from '../lib/freeMode';
@@ -6,7 +7,7 @@ import './Free.css';
 
 interface Props {
   selection: Selection;
-  onSelectionChange: (s: Selection) => void;
+  onSelectionChange: Dispatch<SetStateAction<Selection>>;
   onBack: () => void;
   onGenerate: (prompt: string) => void;
 }
@@ -16,10 +17,13 @@ export default function Free({ selection, onSelectionChange, onBack, onGenerate 
   const enough = total >= 3;
 
   // 单选：点已选 → 取消；点其他 → 替换为这个
+  // 用 functional updater 避免快速连点时闭包里的 selection 是过期值
   const toggle = (dimId: string, kw: string) => {
-    const current = selection[dimId] || [];
-    const next = current[0] === kw ? [] : [kw];
-    onSelectionChange({ ...selection, [dimId]: next });
+    onSelectionChange((prev) => {
+      const current = prev[dimId] || [];
+      const next = current[0] === kw ? [] : [kw];
+      return { ...prev, [dimId]: next };
+    });
   };
 
   const clear = () => onSelectionChange({});
@@ -81,8 +85,6 @@ export default function Free({ selection, onSelectionChange, onBack, onGenerate 
         })}
 
         <IcpBadge />
-
-        <div className="free-footspace" aria-hidden="true" />
       </div>
 
       <div className="free-footbar">

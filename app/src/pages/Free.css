@@ -5,10 +5,12 @@
   font-size: var(--fs-meta);
   letter-spacing: var(--ls-meta);
   color: var(--text-secondary);
-  padding: 0 12px;
+  padding: 0 14px;
   height: 36px;
   border-radius: var(--r-pill);
   border: 1px solid var(--divider);
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 .free-clear:active {
@@ -17,7 +19,8 @@
 }
 
 .free-body {
-  padding: 4px 20px 20px;
+  /* 底部 padding 给 fixed 操作栏 + ICP 让位：80(footbar) + 8(buffer) = 88px */
+  padding: 4px 20px 88px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -59,13 +62,9 @@
   gap: 8px;
 }
 
-/* 自由模式覆盖 ICP 默认 padding：底部已有 fixed 操作栏，不需要 safe-area，紧凑些 */
+/* 自由模式覆盖 ICP 默认 padding：紧凑，让 ICP 跟最后一个维度卡之间只留 8px */
 .free-body .icp-foot {
-  padding: 12px 0;
-}
-
-.free-footspace {
-  height: 76px; /* 仅覆盖 fixed 操作栏高度，比之前 108 紧凑 */
+  padding: 8px 0;
 }
 
 .free-footbar {
