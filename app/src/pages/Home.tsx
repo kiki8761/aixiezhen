@@ -58,7 +58,7 @@ export default function Home({ onEnterTemplate, onEnterFree }: Props) {
               <span className="mode-card__icon" aria-hidden="true">🎨</span>
               <h2 className="mode-card__title">自由模式</h2>
             </div>
-            <p className="mode-card__desc">关键词自由组合，玩出花</p>
+            <p className="mode-card__desc">关键词自由组合，千变万化</p>
             <p className="mode-card__meta">{dimCount} 个维度 × {keywordCount} 个关键词</p>
           </button>
         </section>
