@@ -1,0 +1,48 @@
+<view class="home" data-theme="{{theme}}">
+  <!-- hero 背景图 + 渐变叠加 -->
+  <image class="home__hero" src="/images/hero.jpg" mode="aspectFill" />
+  <view class="home__overlay"></view>
+
+  <view class="home__inner" style="padding-top: {{statusBarHeight + 24}}px;">
+    <!-- 头部：logo + 标题 + 副标题 -->
+    <view class="home__head">
+      <image class="home__logo" src="/images/logo.png" mode="aspectFit" />
+      <view class="home__title serif">古风写真提示词</view>
+      <view class="home__subtitle">
+        <view class="rule-dash rule-dash--hero">选一选，就能出图</view>
+      </view>
+    </view>
+
+    <!-- 模式入口卡片：v1 只有模板模式 -->
+    <view class="home__cards">
+      <view
+        class="mode-card mode-card--primary"
+        hover-class="mode-card--touching"
+        hover-stay-time="80"
+        bindtap="onTapTemplate"
+      >
+        <view class="mode-card__head">
+          <text class="mode-card__icon">📖</text>
+          <view class="mode-card__title serif">模板模式</view>
+        </view>
+        <view class="mode-card__desc">选现成方案，一键出图</view>
+        <view class="mode-card__meta">{{themeCount}} 个主题 × {{variantCount}} 种姿势</view>
+      </view>
+
+      <view class="mode-card mode-card--coming">
+        <view class="mode-card__head">
+          <text class="mode-card__icon">🎨</text>
+          <view class="mode-card__title serif">自由模式</view>
+          <view class="mode-card__badge">即将上线</view>
+        </view>
+        <view class="mode-card__desc">关键词自由组合，千变万化</view>
+        <view class="mode-card__meta">8 个维度 × 136 个关键词</view>
+      </view>
+    </view>
+
+    <view class="home__foot">
+      <view class="home__foot-brand">by <text class="home__foot-kiki">kiki</text> 的 AI 日常</view>
+      <view class="home__foot-icp">京ICP备2026018722号</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/themes/themes",
+    "pages/variants/variants",
+    "pages/result/result"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#F0F2EC",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "古风写真提示词",
+    "backgroundColor": "#F0F2EC",
+    "backgroundTextStyle": "dark",
+    "navigationStyle": "default"
+  },
+  "darkmode": true,
+  "themeLocation": "theme.json",
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

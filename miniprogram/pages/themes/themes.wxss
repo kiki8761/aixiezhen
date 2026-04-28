@@ -1,0 +1,142 @@
+.page {
+  min-height: 100vh;
+  padding-bottom: 40rpx;
+  background: var(--bg);
+}
+
+.page-sub {
+  text-align: center;
+  padding: 20rpx 40rpx 32rpx;
+  font-size: 26rpx;
+  letter-spacing: 4rpx;
+  color: var(--text-secondary);
+}
+
+/* 搜索框 */
+.search {
+  position: relative;
+  margin: 0 40rpx 32rpx;
+}
+
+.search__input {
+  width: 100%;
+  height: 88rpx;
+  padding: 0 80rpx 0 28rpx;
+  background: var(--card);
+  border: 1rpx solid var(--divider);
+  border-radius: 24rpx;
+  font-size: 30rpx;
+  color: var(--text);
+  box-sizing: border-box;
+}
+
+.search__placeholder {
+  color: var(--text-muted);
+}
+
+.search__clear {
+  position: absolute;
+  right: 16rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56rpx;
+  height: 56rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36rpx;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+/* 卡片网格 */
+.grid {
+  padding: 0 40rpx 32rpx;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28rpx;
+}
+
+.theme-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 3 / 4;
+  padding: 28rpx;
+  border-radius: 28rpx;
+  border: 1rpx solid var(--divider);
+  box-shadow: var(--sh-card);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.theme-card--touching {
+  transform: scale(0.97);
+  box-shadow: 0 2rpx 8rpx rgba(31, 84, 72, 0.12);
+}
+
+.theme-card__badge {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  min-width: 44rpx;
+  height: 40rpx;
+  padding: 0 14rpx;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 999rpx;
+  font-size: 22rpx;
+  font-weight: 500;
+  letter-spacing: 1rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+page[data-theme="dark"] .theme-card__badge {
+  background: rgba(39, 35, 25, 0.92);
+}
+
+.theme-card__inner {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.theme-card__name {
+  font-size: 36rpx;
+  font-weight: 600;
+  letter-spacing: 4rpx;
+  color: var(--text);
+}
+
+.theme-card__tag {
+  font-size: 22rpx;
+  letter-spacing: 4rpx;
+  color: var(--text-secondary);
+}
+
+/* 空状态 */
+.empty {
+  padding: 120rpx 40rpx;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 30rpx;
+}
+
+.empty__hint {
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: var(--text-muted);
+}
+
+/* 底部 ICP */
+.page-icp {
+  text-align: center;
+  padding: 56rpx 40rpx 40rpx;
+  font-size: 22rpx;
+  letter-spacing: 3rpx;
+  color: var(--text-muted);
+}

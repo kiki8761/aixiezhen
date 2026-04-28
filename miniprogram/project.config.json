@@ -1,0 +1,30 @@
+{
+  "miniprogramRoot": "./",
+  "compileType": "miniprogram",
+  "appid": "wx6c5b1db9b407e796",
+  "projectname": "古风写真提示词",
+  "description": "选关键词，复制提示词去 AI 工具出图。by kiki 的 AI 日常。",
+  "setting": {
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "autoAudits": false,
+    "checkInvalidKey": true,
+    "uglifyFileName": true,
+    "ignoreUploadUnusedFiles": true,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "showShadowRootInWxmlPanel": true,
+    "ignoreDevUnusedFiles": false,
+    "showES6CompileOption": false
+  },
+  "compileOptions": {
+    "compileWorklet": false,
+    "compileHotReLoad": true
+  },
+  "libVersion": "3.5.0",
+  "condition": {}
+}

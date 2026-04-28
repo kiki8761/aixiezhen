@@ -1,0 +1,127 @@
+/* 视觉规范 · 青瓷淡彩 / 墨色烛金（小程序版） */
+
+page {
+  /* —— 青瓷淡彩（Light，默认） —— */
+  --bg: #F0F2EC;
+  --card: #FFFFFF;
+  --card-hero-primary: rgba(255, 255, 255, 0.92);
+  --card-hero-secondary: rgba(240, 242, 236, 0.88);
+  --text: #2A3A36;
+  --text-secondary: #6B7A74;
+  --text-muted: #95A19A;
+  --accent: #4A8C7E;
+  --accent-on: #FFFFFF;
+  --aux-1: #A8C4B8;
+  --aux-2: #C9A96E;
+  --divider: #D8DED2;
+
+  --sh-card: 0 2rpx 16rpx rgba(31, 84, 72, 0.08);
+  --sh-hero: 0 16rpx 64rpx rgba(20, 40, 50, 0.25), 0 2rpx 6rpx rgba(20, 40, 50, 0.1);
+
+  background: var(--bg);
+  color: var(--text);
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 30rpx; /* 15px @ 750 设计稿 */
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* —— 墨色烛金（Dark，跟随系统） —— */
+page[data-theme="dark"] {
+  --bg: #17150F;
+  --card: #1F1C15;
+  --card-hero-primary: rgba(31, 28, 21, 0.92);
+  --card-hero-secondary: rgba(23, 21, 15, 0.88);
+  --text: #E8DCC4;
+  --text-secondary: #A89878;
+  --text-muted: #6B6250;
+  --accent: #D4A24C;
+  --accent-on: #17150F;
+  --aux-1: #8A6A3A;
+  --aux-2: #8A6A3A;
+  --divider: #322C22;
+
+  --sh-card: 0 2rpx 24rpx rgba(0, 0, 0, 0.4);
+  --sh-hero: 0 16rpx 64rpx rgba(0, 0, 0, 0.5), 0 2rpx 6rpx rgba(0, 0, 0, 0.4);
+}
+
+/* 宋体（标题用） */
+.serif {
+  font-family: "Songti SC", "STSong", "SimSun", serif;
+}
+
+/* 主按钮 */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+  padding: 0 40rpx;
+  background: var(--accent);
+  color: var(--accent-on);
+  border-radius: 24rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  letter-spacing: 4rpx;
+  font-family: "PingFang SC", sans-serif;
+  border: none;
+  line-height: 1;
+}
+
+.btn-primary[disabled] {
+  background: var(--divider);
+  color: var(--text-muted);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+  padding: 0 40rpx;
+  background: transparent;
+  color: var(--accent);
+  border: 1rpx solid var(--accent);
+  border-radius: 24rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  letter-spacing: 4rpx;
+  font-family: "PingFang SC", sans-serif;
+  line-height: 1;
+}
+
+/* 副标题两侧短横线装饰 */
+.rule-dash {
+  display: inline-flex;
+  align-items: center;
+  gap: 20rpx;
+}
+.rule-dash::before,
+.rule-dash::after {
+  content: "";
+  display: block;
+  width: 48rpx;
+  height: 2rpx;
+  background: var(--divider);
+}
+.rule-dash--hero::before,
+.rule-dash--hero::after {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* 卡片基础 */
+.card {
+  background: var(--card);
+  border: 1rpx solid var(--divider);
+  border-radius: 28rpx;
+  box-shadow: var(--sh-card);
+}
+
+/* 公共按钮的 hover 反馈（小程序点击态） */
+.touch-feedback {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.touch-feedback.is-touching {
+  transform: scale(0.97);
+  opacity: 0.92;
+}

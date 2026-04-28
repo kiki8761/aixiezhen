@@ -1,0 +1,48 @@
+<view class="page" data-theme="{{theme}}">
+  <!-- 副标题装饰 -->
+  <view class="page-sub">
+    <view class="rule-dash">选一个主题方案</view>
+  </view>
+
+  <!-- 搜索框 -->
+  <view class="search">
+    <input
+      class="search__input"
+      type="text"
+      value="{{query}}"
+      placeholder="搜索主题：赤梦流霞 / 竹林 / 雪……"
+      placeholder-class="search__placeholder"
+      confirm-type="search"
+      bindinput="onQueryInput"
+    />
+    <view wx:if="{{query}}" class="search__clear" bindtap="onClearQuery">×</view>
+  </view>
+
+  <!-- 卡片网格 -->
+  <view wx:if="{{!empty}}" class="grid">
+    <view
+      wx:for="{{list}}"
+      wx:key="id"
+      class="theme-card"
+      style="background: {{item.bg}};"
+      hover-class="theme-card--touching"
+      hover-stay-time="80"
+      data-id="{{item.id}}"
+      bindtap="onTapTheme"
+    >
+      <view class="theme-card__badge" style="color: {{item.color}};">{{item.variantCount}}</view>
+      <view class="theme-card__inner">
+        <view class="theme-card__name serif">{{item.name}}</view>
+        <view wx:if="{{item.tagline}}" class="theme-card__tag">{{item.tagline}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:else class="empty">
+    没有匹配「{{query}}」的主题
+    <view class="empty__hint">试试换个关键词</view>
+  </view>
+
+  <!-- 备案 -->
+  <view class="page-icp">京ICP备2026018722号</view>
+</view>

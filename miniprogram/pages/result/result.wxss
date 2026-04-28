@@ -1,0 +1,144 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.page-sub {
+  text-align: center;
+  padding: 20rpx 40rpx 32rpx;
+  font-size: 26rpx;
+  letter-spacing: 4rpx;
+  color: var(--text-secondary);
+}
+
+/* prompt 卡片 */
+.prompt-card {
+  margin: 0 40rpx;
+  padding: 40rpx;
+  background: var(--card);
+  border: 1rpx solid var(--divider);
+  border-radius: 28rpx;
+  box-shadow: var(--sh-card);
+}
+
+.prompt-card__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24rpx;
+  margin-bottom: 24rpx;
+}
+
+.prompt-card__crumb {
+  font-size: 26rpx;
+  letter-spacing: 4rpx;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+
+.prompt-card__count {
+  font-size: 22rpx;
+  letter-spacing: 3rpx;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.prompt-card__text {
+  margin: 0 0 32rpx;
+  padding: 28rpx 0 0;
+  border-top: 1rpx solid var(--divider);
+  font-size: 30rpx;
+  line-height: 1.85;
+  letter-spacing: 1rpx;
+  color: var(--text);
+  word-break: break-word;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.prompt-card__copy {
+  width: 100%;
+  height: 96rpx;
+  background: var(--accent);
+  color: var(--accent-on);
+  border-radius: 24rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  letter-spacing: 4rpx;
+  font-family: "PingFang SC", sans-serif;
+  border: none;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.prompt-card__copy::after {
+  border: none;
+}
+.prompt-card__copy--touching {
+  background: var(--aux-1);
+  transform: scale(0.99);
+}
+
+/* 出图引导 */
+.goto {
+  margin: 48rpx 40rpx 0;
+  padding: 32rpx;
+  background: var(--card);
+  border: 1rpx solid var(--divider);
+  border-radius: 28rpx;
+  text-align: center;
+}
+
+.goto__label {
+  font-size: 26rpx;
+  letter-spacing: 4rpx;
+  color: var(--text-secondary);
+  margin-bottom: 16rpx;
+}
+
+.goto__hint {
+  font-size: 26rpx;
+  line-height: 1.7;
+  letter-spacing: 2rpx;
+  color: var(--text-secondary);
+}
+
+/* 操作 */
+.actions {
+  display: flex;
+  gap: 24rpx;
+  padding: 48rpx 40rpx 0;
+}
+
+.actions__btn {
+  flex: 1;
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1rpx solid var(--accent);
+  color: var(--accent);
+  border-radius: 24rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  letter-spacing: 4rpx;
+}
+
+.actions__btn--touching {
+  transform: scale(0.97);
+  background: rgba(74, 140, 126, 0.08);
+}
+
+.page-icp {
+  text-align: center;
+  padding: 56rpx 40rpx 40rpx;
+  font-size: 22rpx;
+  letter-spacing: 3rpx;
+  color: var(--text-muted);
+}

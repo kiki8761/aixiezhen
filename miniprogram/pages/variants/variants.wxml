@@ -1,0 +1,27 @@
+<view class="page" data-theme="{{theme}}">
+  <view class="page-sub">
+    <view class="rule-dash">{{tagline}}</view>
+  </view>
+
+  <view class="list">
+    <view
+      wx:for="{{variants}}"
+      wx:key="id"
+      class="row"
+      hover-class="row--touching"
+      hover-stay-time="80"
+      data-id="{{item.id}}"
+      data-theme-id="{{item.themeId}}"
+      bindtap="onTapVariant"
+    >
+      <view class="row__idx">{{item.idx}}</view>
+      <view class="row__body">
+        <view class="row__label serif">{{item.poseLabel}}</view>
+        <view class="row__desc">{{item.description}}</view>
+      </view>
+      <view class="row__arrow">›</view>
+    </view>
+  </view>
+
+  <view class="page-icp">京ICP备2026018722号</view>
+</view>

@@ -1,0 +1,85 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.page-sub {
+  text-align: center;
+  padding: 20rpx 40rpx 32rpx;
+  font-size: 26rpx;
+  letter-spacing: 4rpx;
+  color: var(--text-secondary);
+}
+
+.list {
+  padding: 0 40rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 28rpx;
+  padding: 28rpx 32rpx;
+  min-height: 136rpx;
+  background: var(--card);
+  border: 1rpx solid var(--divider);
+  border-radius: 28rpx;
+  box-shadow: var(--sh-card);
+  box-sizing: border-box;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.row--touching {
+  transform: scale(0.98);
+  border-color: var(--accent);
+}
+
+.row__idx {
+  flex-shrink: 0;
+  width: 64rpx;
+  font-size: 26rpx;
+  letter-spacing: 4rpx;
+  color: var(--text-muted);
+}
+
+.row__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.row__label {
+  font-size: 36rpx;
+  font-weight: 500;
+  letter-spacing: 4rpx;
+  color: var(--text);
+}
+
+.row__desc {
+  font-size: 24rpx;
+  letter-spacing: 4rpx;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.row__arrow {
+  flex-shrink: 0;
+  font-size: 36rpx;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+.page-icp {
+  text-align: center;
+  padding: 56rpx 40rpx 40rpx;
+  font-size: 22rpx;
+  letter-spacing: 3rpx;
+  color: var(--text-muted);
+}

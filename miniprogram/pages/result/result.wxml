@@ -1,0 +1,41 @@
+<view class="page" data-theme="{{theme}}">
+  <view class="page-sub">
+    <view class="rule-dash">{{breadcrumb}}</view>
+  </view>
+
+  <!-- prompt 卡片 -->
+  <view class="prompt-card">
+    <view class="prompt-card__head">
+      <view class="prompt-card__crumb">{{breadcrumb}}</view>
+      <view class="prompt-card__count">{{promptCount}} 字</view>
+    </view>
+    <view class="prompt-card__text serif" user-select="true">{{prompt}}</view>
+    <button
+      class="prompt-card__copy"
+      hover-class="prompt-card__copy--touching"
+      hover-stay-time="80"
+      bindtap="onCopy"
+    >
+      复制提示词
+    </button>
+  </view>
+
+  <!-- 去哪出图（小程序版砍掉外链，纯文字提示） -->
+  <view class="goto">
+    <view class="goto__label">
+      <view class="rule-dash">复制后，去哪里出图</view>
+    </view>
+    <view class="goto__hint">
+      把上面的提示词复制走，粘贴到你常用的 AI 绘图工具里——
+      即梦、可灵、豆包、吐司、Midjourney 都可以。
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="actions">
+    <view class="actions__btn btn-secondary" hover-class="actions__btn--touching" bindtap="onChangeOne">换一个</view>
+    <view class="actions__btn btn-secondary" hover-class="actions__btn--touching" bindtap="onRestart">重新开始</view>
+  </view>
+
+  <view class="page-icp">京ICP备2026018722号</view>
+</view>
