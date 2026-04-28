@@ -47,7 +47,7 @@
   "simulatorPluginLibVersion": {},
   "packOptions": {
     "ignore": [
-      { "type": "file", "value": "README.md" }
+      { "type": "file", "value": "project.private.config.json" }
     ],
     "include": []
   },
