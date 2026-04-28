@@ -29,11 +29,15 @@
         <view class="mode-card__meta">{{themeCount}} 个主题 × {{variantCount}} 种姿势</view>
       </view>
 
-      <view class="mode-card mode-card--coming">
+      <view
+        class="mode-card mode-card--secondary"
+        hover-class="mode-card--touching"
+        hover-stay-time="80"
+        bindtap="onTapFree"
+      >
         <view class="mode-card__head">
           <text class="mode-card__icon">🎨</text>
           <view class="mode-card__title serif">自由模式</view>
-          <view class="mode-card__badge">即将上线</view>
         </view>
         <view class="mode-card__desc">关键词自由组合，千变万化</view>
         <view class="mode-card__meta">8 个维度 × 136 个关键词</view>

@@ -34,4 +34,10 @@ Page({
       url: '/pages/themes/themes',
     });
   },
+
+  onTapFree() {
+    wx.navigateTo({
+      url: '/pages/free/free',
+    });
+  },
 });

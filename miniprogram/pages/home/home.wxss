@@ -97,9 +97,8 @@
   background: var(--card-hero-primary);
 }
 
-.mode-card--coming {
+.mode-card--secondary {
   background: var(--card-hero-secondary);
-  opacity: 0.78;
 }
 
 .mode-card--touching {

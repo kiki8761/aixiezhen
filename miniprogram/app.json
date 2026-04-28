@@ -3,6 +3,7 @@
     "pages/home/home",
     "pages/themes/themes",
     "pages/variants/variants",
+    "pages/free/free",
     "pages/result/result"
   ],
   "window": {

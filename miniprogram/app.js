@@ -24,5 +24,9 @@ App({
     theme: 'light',
     // 模板模式搜索词跨页保留
     themeQuery: '',
+    // 自由模式选择跨页保留（"换一个"返回时还在）
+    freeSelection: {},
+    // 自由模式生成的临时结果（result 页消费完即可丢弃）
+    pendingResult: null,
   },
 });

@@ -1,0 +1,57 @@
+<view class="page" data-theme="{{theme}}">
+  <!-- 副标题 + 清空按钮 -->
+  <view class="head">
+    <view class="head__sub">
+      <view class="rule-dash">关键词自由组合</view>
+    </view>
+    <view
+      wx:if="{{total > 0}}"
+      class="head__clear"
+      hover-class="head__clear--touching"
+      hover-stay-time="80"
+      bindtap="onClear"
+    >清空</view>
+  </view>
+
+  <!-- 8 个维度 -->
+  <view class="body">
+    <view wx:for="{{list}}" wx:key="id" class="dim">
+      <view class="dim__head">
+        <view class="dim__name serif">{{item.name}}</view>
+        <view class="dim__count">已选 {{item.selectedCount}} / {{item.total}}</view>
+      </view>
+      <view class="dim__chips">
+        <view
+          wx:for="{{item.chips}}"
+          wx:for-item="chip"
+          wx:key="kw"
+          class="chip {{chip.on ? 'chip--on' : ''}}"
+          hover-class="chip--touching"
+          hover-stay-time="60"
+          data-dim-id="{{item.id}}"
+          data-kw="{{chip.kw}}"
+          bindtap="onTapChip"
+        >{{chip.kw}}</view>
+      </view>
+    </view>
+
+    <!-- 备案紧贴最后维度 -->
+    <view class="page-icp">京ICP备2026018722号</view>
+  </view>
+
+  <!-- 固定底部操作栏 -->
+  <view class="footbar">
+    <view class="footbar__inner">
+      <view class="footbar__meta">
+        <view class="footbar__count serif">已选 {{total}} 项</view>
+        <view class="footbar__hint">{{enough ? '建议每个维度至少选 1 项' : '至少选 3 项'}}</view>
+      </view>
+      <view
+        class="footbar__btn {{enough ? '' : 'footbar__btn--disabled'}}"
+        hover-class="{{enough ? 'footbar__btn--touching' : ''}}"
+        hover-stay-time="80"
+        bindtap="onGenerate"
+      >生成提示词</view>
+    </view>
+  </view>
+</view>

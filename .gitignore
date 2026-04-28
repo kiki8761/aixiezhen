@@ -25,6 +25,9 @@ dist-ssr/
 # claude code 本地会话配置
 .claude/
 
+# 微信开发者工具本地偏好（不入库）
+miniprogram/project.private.config.json
+
 # raw image originals（已复制到 app/public/assets/，避免仓库里有两份）
 /logo.png
 /hero-mountains.png

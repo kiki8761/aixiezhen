@@ -8,10 +8,33 @@ Page({
     breadcrumb: '',
     prompt: '',
     promptCount: 0,
-    themeId: '',
+    from: 'template', // 'template' | 'free'
   },
 
   onLoad(options) {
+    const from = options.from || 'template';
+
+    if (from === 'free') {
+      // 自由模式：从 globalData 读临时结果
+      const pending = app.globalData.pendingResult;
+      if (!pending || !pending.prompt) {
+        wx.showToast({ title: '提示词丢失，请重新生成', icon: 'none' });
+        setTimeout(() => wx.navigateBack(), 800);
+        return;
+      }
+      this.setData({
+        theme: app.globalData.theme || 'light',
+        breadcrumb: pending.breadcrumb || '自由组合',
+        prompt: pending.prompt,
+        promptCount: pending.prompt.length,
+        from: 'free',
+      });
+      // 消费完即清，避免下次误读
+      app.globalData.pendingResult = null;
+      return;
+    }
+
+    // 模板模式：从 themeId + variantId 查
     const { themeId, variantId } = options;
     const t = themesData.themes.find((x) => x.id === themeId);
     const v = t && t.variants.find((x) => x.id === variantId);
@@ -25,7 +48,7 @@ Page({
       breadcrumb: `${t.name} · ${v.poseLabel}`,
       prompt: v.prompt,
       promptCount: v.prompt.length,
-      themeId: t.id,
+      from: 'template',
     });
   },
 
@@ -52,12 +75,15 @@ Page({
   },
 
   onChangeOne() {
-    // 回到当前主题的变体列表
+    // 回上一级：模板回变体列表，自由回自由模式（selection 还在 globalData 里）
     wx.navigateBack();
   },
 
   onRestart() {
-    // 回首页（清栈）
+    // 重新开始：自由模式额外清空 selection
+    if (this.data.from === 'free') {
+      app.globalData.freeSelection = {};
+    }
     wx.reLaunch({ url: '/pages/home/home' });
   },
 });
