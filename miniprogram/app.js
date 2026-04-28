@@ -1,9 +1,13 @@
 // 全局应用入口
 App({
   onLaunch() {
-    // 初始读取系统主题
-    const systemInfo = wx.getSystemInfoSync();
-    this.globalData.theme = systemInfo.theme || 'light';
+    // 初始读取系统主题（用新 API，旧的 getSystemInfoSync 已弃用）
+    try {
+      const baseInfo = wx.getAppBaseInfo ? wx.getAppBaseInfo() : null;
+      this.globalData.theme = (baseInfo && baseInfo.theme) || 'light';
+    } catch (e) {
+      this.globalData.theme = 'light';
+    }
 
     // 监听主题变化（系统切换深色模式时实时响应）
     if (wx.onThemeChange) {

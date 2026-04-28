@@ -11,9 +11,16 @@ Page({
   },
 
   onLoad() {
-    const sys = wx.getSystemInfoSync();
+    // 用新 API getWindowInfo 取状态栏高度（旧的 getSystemInfoSync 已弃用）
+    let statusBarHeight = 0;
+    try {
+      const winInfo = wx.getWindowInfo ? wx.getWindowInfo() : null;
+      statusBarHeight = (winInfo && winInfo.statusBarHeight) || 0;
+    } catch (e) {
+      statusBarHeight = 0;
+    }
     this.setData({
-      statusBarHeight: sys.statusBarHeight || 0,
+      statusBarHeight,
       theme: app.globalData.theme || 'light',
     });
   },
