@@ -46,7 +46,9 @@
   "condition": {},
   "simulatorPluginLibVersion": {},
   "packOptions": {
-    "ignore": [],
+    "ignore": [
+      { "type": "file", "value": "README.md" }
+    ],
     "include": []
   },
   "editorSetting": {}
