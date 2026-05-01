@@ -1,7 +1,6 @@
 .home {
   position: relative;
-  min-height: 100dvh;
-  min-height: 100svh;
+  min-height: var(--app-height, 100svh);
   width: 100%;
   overflow: hidden;
 }
@@ -28,8 +27,7 @@
 .home-inner {
   position: relative;
   z-index: 2;
-  min-height: 100dvh;
-  min-height: 100svh;
+  min-height: var(--app-height, 100svh);
   padding: 40px 20px 24px;
   display: flex;
   flex-direction: column;

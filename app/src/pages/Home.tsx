@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import themesData from '../data/themes.json';
 import type { ThemesData } from '../lib/types';
 import { FREE_DIMENSIONS } from '../lib/freeMode';
@@ -9,6 +10,15 @@ interface Props {
 }
 
 export default function Home({ onEnterTemplate, onEnterFree }: Props) {
+  useEffect(() => {
+    const setHeight = () => {
+      document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+    };
+    setHeight();
+    window.addEventListener('resize', setHeight);
+    return () => window.removeEventListener('resize', setHeight);
+  }, []);
+
   const data = themesData as ThemesData;
   const themeCount = data.themes.length;
   const variantCount = data.themes.reduce((acc, t) => acc + t.variants.length, 0);
