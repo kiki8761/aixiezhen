@@ -73,13 +73,18 @@
   font-family: var(--font-sans);
 }
 
-.home-cards {
+/* 把卡片+页脚整体推到底部，消除页脚下方空白 */
+.home-bottom {
+  margin-top: auto;
   width: 100%;
   max-width: 520px;
+}
+
+.home-cards {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  margin-top: auto;
   margin-bottom: 14px;
   padding-top: 24px;
 }
@@ -189,5 +194,5 @@
 }
 
 @media (min-height: 780px) {
-  .home-cards { margin-bottom: 40px; }
+  .home-cards { margin-bottom: 28px; }
 }

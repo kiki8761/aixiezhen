@@ -35,6 +35,7 @@ export default function Home({ onEnterTemplate, onEnterFree }: Props) {
           </div>
         </header>
 
+        <div className="home-bottom">
         <section className="home-cards">
           <button
             className="mode-card mode-card--primary"
@@ -84,6 +85,7 @@ export default function Home({ onEnterTemplate, onEnterFree }: Props) {
             京公网安备11011502039877号
           </a>
         </footer>
+        </div>
       </main>
     </div>
   );
