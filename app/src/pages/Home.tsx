@@ -73,7 +73,15 @@ export default function Home({ onEnterTemplate, onEnterFree }: Props) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            京ICP备2026018722号
+            京ICP备2026018722号-1
+          </a>
+          <a
+            className="home-foot__icp home-foot__icp--tight"
+            href="https://beian.mps.gov.cn/#/query/webSearch?code=11011502039877"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            京公网安备11011502039877号
           </a>
         </footer>
       </main>

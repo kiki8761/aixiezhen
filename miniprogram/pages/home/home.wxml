@@ -46,7 +46,8 @@
 
     <view class="home__foot">
       <view class="home__foot-brand">by <text class="home__foot-kiki">kiki</text> 的 AI 日常</view>
-      <view class="home__foot-icp">京ICP备2026018722号</view>
+      <view class="home__foot-icp">京ICP备2026018722号-1</view>
+      <view class="home__foot-icp home__foot-icp--tight">京公网安备11011502039877号</view>
     </view>
   </view>
 </view>

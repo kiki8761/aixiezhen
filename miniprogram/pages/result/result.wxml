@@ -37,5 +37,6 @@
     <view class="actions__btn btn-secondary" hover-class="actions__btn--touching" bindtap="onRestart">重新开始</view>
   </view>
 
-  <view class="page-icp">京ICP备2026018722号</view>
+  <view class="page-icp">京ICP备2026018722号-1</view>
+  <view class="page-icp page-icp--tight">京公网安备11011502039877号</view>
 </view>

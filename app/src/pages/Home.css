@@ -184,6 +184,10 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+.home-foot__icp--tight {
+  margin-top: -8px;
+}
+
 @media (min-height: 780px) {
   .home-cards { margin-bottom: 40px; }
 }

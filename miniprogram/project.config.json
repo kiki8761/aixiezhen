@@ -1,7 +1,7 @@
 {
   "miniprogramRoot": "./",
   "compileType": "miniprogram",
-  "appid": "wx6c5b1db9b407e796",
+  "appid": "wxd726a7ae3017cef0",
   "projectname": "古风写真提示词",
   "description": "选关键词，复制提示词去 AI 工具出图。by kiki 的 AI 日常。",
   "setting": {
@@ -47,7 +47,10 @@
   "simulatorPluginLibVersion": {},
   "packOptions": {
     "ignore": [
-      { "type": "file", "value": "project.private.config.json" }
+      {
+        "type": "file",
+        "value": "project.private.config.json"
+      }
     ],
     "include": []
   },

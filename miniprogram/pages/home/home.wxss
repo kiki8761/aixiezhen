@@ -177,3 +177,7 @@
   color: rgba(255, 255, 255, 0.62);
   line-height: 1;
 }
+
+.home__foot-icp--tight {
+  margin-top: -14rpx;
+}

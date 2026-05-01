@@ -125,3 +125,9 @@ page[data-theme="dark"] {
   transform: scale(0.97);
   opacity: 0.92;
 }
+
+/* 备案第二行（紧贴上一行 ICP，去掉顶 padding，底部跟随各页 .page-icp 自身的 padding） */
+.page-icp--tight {
+  padding-top: 0 !important;
+  margin-top: 6rpx;
+}

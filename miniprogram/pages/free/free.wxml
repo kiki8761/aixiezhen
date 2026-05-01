@@ -36,7 +36,8 @@
     </view>
 
     <!-- 备案紧贴最后维度 -->
-    <view class="page-icp">京ICP备2026018722号</view>
+    <view class="page-icp">京ICP备2026018722号-1</view>
+    <view class="page-icp page-icp--tight">京公网安备11011502039877号</view>
   </view>
 
   <!-- 固定底部操作栏 -->
